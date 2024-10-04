@@ -29,7 +29,7 @@ struct Title: ViewModifier {
 
 struct Watermark: ViewModifier {
     var text: String
-
+    
     func body(content: Content) -> some View {
         ZStack(alignment: .bottomTrailing) {
             content
@@ -48,7 +48,7 @@ extension View {
     func titleStyle() -> some View {
         modifier(Title())
     }
-
+    
     func watermarked(with text: String) -> some View {
         modifier(Watermark(text: text))
     }
@@ -60,8 +60,8 @@ struct ViewModifiers: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .titleStyle()
-//            .modifier(Title())
-
+        //            .modifier(Title())
+        
         Color.blue
             .frame(width: 300, height: 200)
             .watermarked(with: "Hacking with Swift")
